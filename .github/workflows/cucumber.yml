@@ -1,17 +1,9 @@
 name: Dev Pull Request Validator
-permissions:
-  id-token: write
-  contents: read
+
 on:
   push:
     branches:
       - 'main'
-    paths:
-      - src/**
-      - Dockerfile
-      - '**.gradle'
-      - gradle.*
-      - gradle/**
       
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
