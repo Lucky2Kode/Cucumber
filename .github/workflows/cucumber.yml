@@ -46,10 +46,14 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
-        
-      - name: Run Allure Create with Gradle
+
+      - name: Set up Allure environment
+        run: |
+          sudo apt-add-repository ppa:qameta/allure
+          sudo apt-get update
+          sudo apt-get install allure
+
+      - name: Generate Allure Report
         run: ./gradlew allureReport
 
-      - name: Run Allure Generate with Gradle
-        run: ./gradlew serveAllureReport
 
