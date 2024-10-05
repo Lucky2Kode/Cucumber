@@ -32,7 +32,7 @@ jobs:
           gradle-version: 8.5
 
       - name: Run Check current directory
-        run: pwd
+        run: chmod +x ./gradlew
       
       - name: Run a check contents
         run: ls
