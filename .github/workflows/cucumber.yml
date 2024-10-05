@@ -46,4 +46,10 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
+        
+      - name: Run Allure Create with Gradle
+        run: ./gradlew allureReport
+
+      - name: Run Allure Generate with Gradle
+        run: ./gradlew serveAllureReport
 
