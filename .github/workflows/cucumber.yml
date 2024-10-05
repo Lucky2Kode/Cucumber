@@ -31,6 +31,12 @@ jobs:
         with:
           gradle-version: 8.5
 
+      - name: Run Check current directory
+        run: pwd
+      
+      - name: Run a check contents
+        run: ls
+        
       - name: Build with Gradle
         run: ./gradlew clean build
 
