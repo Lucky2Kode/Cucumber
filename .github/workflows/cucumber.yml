@@ -31,6 +31,14 @@ jobs:
         with:
           gradle-version: 8.5
 
+      - name: Install Allure CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget unzip
+          wget https://github.com/allure-framework/allure2/releases/download/2.20.1/allure-2.20.1.zip
+          unzip allure-2.20.1.zip -d /opt/allure
+          sudo ln -s /opt/allure/allure-2.20.1/bin/allure /usr/bin/allure
+
       - name: Run Check current directory
         run: chmod +x ./gradlew
       
@@ -47,13 +55,7 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
 
-      - name: Set up Allure environment
-        run: |
-          sudo apt-add-repository ppa:qameta/allure
-          sudo apt-get update
-          sudo apt-get install allure
-
       - name: Generate Allure Report
-        run: ./gradlew allureReport
+        run: allure generate --clean
 
 
